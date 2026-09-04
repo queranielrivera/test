@@ -1,0 +1,280 @@
+/* Reset and Box Model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a0229;
+}
+
+/* Page Canvas with Gradient Matching the Image */
+.page-container {
+    width: 100%;
+    max-width: 900px;
+    min-height: 750px;
+    background: linear-gradient(135deg, #ff3c53 0%, #a23eff 50%, #7d2ae8 100%);
+    position: relative;
+    padding: 15px 30px 40px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+
+/* Top "Hub" Navigation Button/Banner */
+.top-nav {
+    width: 100%;
+    background: linear-gradient(to right, #ffd438, #ff8c42);
+    margin-bottom: 25px;
+}
+
+.hub-btn {
+    background: transparent;
+    border: none;
+    color: #4a28a2;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    padding: 5px 25px;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.hub-btn:hover {
+    color: #2b1263;
+    transform: scale(1.05);
+}
+
+/* Layout Grid */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 10px;
+}
+
+.left-section {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-section {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding-top: 100px;
+}
+
+/* Splatter Effect and Main Title */
+.title-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.main-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 4.2rem;
+    font-weight: 700;
+    color: #3b52ff;
+    line-height: 0.95;
+    text-shadow: 
+        3px 3px 0px #ffd800,
+        -2px -2px 0px #ffd800,
+        2px -2px 0px #ffd800,
+        -2px 2px 0px #ffd800,
+        0px 5px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    transform: rotate(-2deg);
+}
+
+/* CSS Decorative Splatters */
+.splatter {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    filter: blur(1px);
+}
+
+.red-splatter {
+    background-color: #d81b2a;
+    width: 110px;
+    height: 110px;
+    top: -20px;
+    right: 10px;
+    clip-path: polygon(30% 0%, 70% 10%, 100% 35%, 85% 65%, 90% 90%, 50% 80%, 15% 95%, 0% 50%, 10% 20%);
+}
+
+.yellow-splatter {
+    background-color: #e2f033;
+    width: 130px;
+    height: 110px;
+    bottom: -10px;
+    left: 20px;
+    clip-path: polygon(20% 10%, 80% 0%, 100% 50%, 75% 90%, 25% 100%, 0% 60%);
+}
+
+.green-splatter {
+    background-color: #3fe233;
+    width: 90px;
+    height: 90px;
+    bottom: -20px;
+    left: 140px;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+/* About Card Component */
+.about-card {
+    background: linear-gradient(180deg, #38f9d7 0%, #2e82f5 50%, #0042a5 100%);
+    border-radius: 20px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    color: #ffd800;
+    width: 100%;
+}
+
+.about-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+}
+
+.about-text {
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+
+.about-text:last-child {
+    margin-bottom: 0;
+}
+
+/* Cloud Button Styling */
+.cloud-btn {
+    position: relative;
+    background: #fdfbf7;
+    border: 4px solid #3b3b3b;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-family: 'Mali', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 
+        0 6px 0px #3b3b3b,
+        0 10px 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+/* Outer cloud bump decorative ring effects */
+.cloud-btn::before,
+.cloud-btn::after {
+    content: '';
+    position: absolute;
+    background: #fdfbf7;
+    border: 3px solid #3b3b3b;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.cloud-btn::before {
+    width: 35px;
+    height: 35px;
+    top: -15px;
+    left: 40px;
+    border-bottom: none;
+}
+
+.cloud-btn::after {
+    width: 30px;
+    height: 30px;
+    bottom: -12px;
+    right: 50px;
+    border-top: none;
+}
+
+/* Hover & Active Animation */
+.cloud-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 10px 0px #3b3b3b,
+        0 15px 20px rgba(0,0,0,0.3);
+}
+
+.cloud-btn:active {
+    transform: translateY(2px);
+    box-shadow: 
+        0 2px 0px #3b3b3b,
+        0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Button Color Variants matching image */
+.activities-btn {
+    color: #e28733;
+    border-color: #d18231;
+}
+
+.ministries-btn {
+    color: #585d68;
+    border-color: #585d68;
+}
+
+.lessons-btn {
+    color: #196cbd;
+    border-color: #196cbd;
+}
+
+/* Button Doodle Icons */
+.sparkle {
+    font-size: 1rem;
+    position: absolute;
+}
+
+.left-sparkle {
+    left: 12px;
+    top: 8px;
+}
+
+.right-sparkle {
+    right: 12px;
+    top: 8px;
+}
+
+/* Responsive Scaling for Mobile Screens */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .right-section {
+        padding-top: 20px;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .main-title {
+        font-size: 3.2rem;
+    }
+}
+Sent
+Compose
+Write to
